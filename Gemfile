@@ -10,6 +10,7 @@ gem "figaro"
 gem "fog", "~> 1.3.1"
 gem 'mini_magick', '~> 4.3.1'
 gem 'carrierwave-aws'
+gem 'stripe'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
