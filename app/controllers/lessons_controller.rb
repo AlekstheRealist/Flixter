@@ -13,9 +13,8 @@ class LessonsController < ApplicationController
   end
 
   def require_authorized_for_current_lesson
-    
-    if current_user.enrolled_in?(current_lesson.section.course) != current_user
-      redirect_to course_path(current_lesson), alert: "Must be enrolled to access lesson"
+    if !current_user.enrolled_in?(current_lesson.section.course)
+      redirect_to course_path(current_lesson.section.course), alert: "Must be enrolled to access lesson"
     end
   end
 end
