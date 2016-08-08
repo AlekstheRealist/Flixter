@@ -37,7 +37,7 @@
             <% else %>
               <!-- Button trigger modal -->
               <li><%= link_to 'Login', '#', data: { toggle: 'modal', target: '#myModal' } %></li>
-              <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+              <li><%= link_to 'Sign Up', '#', data: { toggle: 'modal', target: '#mySignUp' } %></li>
             <% end %>
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -48,7 +48,7 @@
 
   
 
-  <!-- Modal -->
+  <!-- Login Modal -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -77,7 +77,54 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <%= f.submit "Log in", class: 'btn btn-primary' %>
+          <%= f.submit "Login", class: 'btn btn-primary' %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sign Up Modal -->
+  <div class="modal fade" id="mySignUp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title text-center" id="myModalLabel">Sign Up</h4>
+        </div>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <div class="modal-body">
+  
+          <%= devise_error_messages! %>
+
+          <div class="field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, class: 'col-xs-12' %>
+          </div>
+          <br />
+          <br />
+          <div class="field">
+            <%= f.label :password %>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "off", class: 'col-xs-12' %>
+          </div>
+          <br />
+          <br />
+          <div class="field">
+            <%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "off", class: 'col-xs-12' %>
+          </div>
+          <br />
+          <br />
+        
+        <br />
+        <%= render "devise/shared/links" %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <%= f.submit "Sign up", class: 'btn btn-primary' %>
         </div>
         <% end %>
       </div>
