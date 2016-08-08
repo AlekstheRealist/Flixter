@@ -35,7 +35,8 @@
               <li><%= link_to 'My Dashboard', dashboard_path %></li>
               <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
             <% else %>
-              <li><%= link_to 'Login', new_user_session_path %></li>
+              <!-- Button trigger modal -->
+              <li><%= link_to 'Login', '#', data: { toggle: 'modal', target: '#myModal' } %></li>
               <li><%= link_to 'Sign Up', new_user_registration_path %></li>
             <% end %>
           </ul>
@@ -44,6 +45,44 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
+
+  
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title text-center" id="myModalLabel">Login</h4>
+        </div>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="modal-body">
+          <br />
+          <div class="field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, class: 'col-xs-12' %>
+          </div>
+          <br />
+          <br />
+          <div class="field">
+            <%= f.label :password %><br />
+            <%= f.password_field :password, autocomplete: "off", class: 'col-xs-12' %>
+          </div>
+          <br />
+          <br />
+
+          <br />
+          <%= render "devise/shared/links" %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <%= f.submit "Log in", class: 'btn btn-primary' %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 
     <% if notice.present? %>
       <p class="notice alert alert-info"><%= notice %></p>
