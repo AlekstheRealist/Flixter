@@ -1,7 +1,7 @@
 # Flixter
 #### Written mostly in Ruby but also utilizes JavaScript and jQuery.
 
-You can checkout Flixter [here] (https://flixter-aleks-real.herokuapp.com/). Sign up, make your own course, and hopefully make some extra money!
+You can checkout Flixter [here] (https://flixter-aleks-real.herokuapp.com/). Sign up, enroll into a course, make your own course, and have fun learning!
 
 ### Features:
 * Easy to use platform for teachers to make courses and make money.
@@ -19,3 +19,5 @@ You can checkout Flixter [here] (https://flixter-aleks-real.herokuapp.com/). Sig
 * Users can be both students and teachers with restricted Admin access if making a teacher course.
 
 * Shows all courses that students are enrolled into & shows all courses teachers are teaching.
+
+![alt tag]()
