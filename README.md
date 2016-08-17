@@ -20,4 +20,5 @@ You can checkout Flixter [here] (https://flixter-aleks-real.herokuapp.com/). Sig
 
 * Shows all courses that students are enrolled into & shows all courses teachers are teaching.
 
-![alt tag]()
+###### Here's a sneak peek at the teacher administrative page when editing a course.
+![alt tag](https://github.com/AlekstheRealist/Flixter/blob/master/app/assets/images/Screen%20Shot%202016-08-17%20at%203.51.37%20PM.png)
