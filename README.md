@@ -1,7 +1,9 @@
 # Flixter
 #### Written mostly in Ruby but also utilizes JavaScript and jQuery.
 
-### Features
+You can checkout Flixter [here] (https://flixter-aleks-real.herokuapp.com/). Sign up, make your own course, and hopefully make some extra money!
+
+### Features:
 * Easy to use platform for teachers to make courses and make money.
 
 * Stripe is used to process payments by students purchasing courses made by teachers.
